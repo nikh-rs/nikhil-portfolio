@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikhil's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .mobile-menu-base {
+      transition: all 0.3s ease-in-out;
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    .open-menu {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+  <!-- Header / Navbar -->
+  <header class="bg-[#03001e] text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Nikhil</h1>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8 text-lg">
+        <a href="#about" class="hover:text-yellow-300 transition">About</a>
+        <a href="#projects" class="hover:text-yellow-300 transition">Projects</a>
+        <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger & Close Icons -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg id="icon-open" class="w-6 h-6 block transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+          <!-- Close Icon -->
+          <svg id="icon-close" class="w-6 h-6 hidden transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="mobile-menu-base hidden md:hidden px-4 pb-4 space-y-2 text-lg">
+      <a href="#about" class="block hover:text-yellow-300 transition">About</a>
+      <a href="#projects" class="block hover:text-yellow-300 transition">Projects</a>
+      <a href="#contact" class="block hover:text-yellow-300 transition">Contact</a>
+    </nav>
+  </header>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+
+      if (isHidden) {
+        // Show menu with animation
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+          mobileMenu.classList.add('open-menu');
+        }, 10);
+      } else {
+        // Hide animation, then fully hide it
+        mobileMenu.classList.remove('open-menu');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300); // Wait for animation to finish
+      }
+
+      // Toggle icons
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
