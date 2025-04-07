@@ -21,28 +21,28 @@
 
 <body class="bg-white text-black">
 
-  <!-- Header / Navbar -->
+  <!Navbar!>
   <header class="bg-[#03001e] text-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold">Nikhil</h1>
 
-      <!-- Desktop Nav -->
+      <!Desktop Nav!>
       <nav class="hidden md:flex space-x-8 text-lg">
         <a href="#about" class="hover:text-yellow-300 transition">About</a>
         <a href="#projects" class="hover:text-yellow-300 transition">Projects</a>
         <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
       </nav>
 
-      <!-- Mobile Hamburger & Close Icons -->
+      <!Mobile Hamburger & Close Icons!>
       <div class="md:hidden">
         <button id="menu-btn" class="focus:outline-none">
-          <!-- Hamburger Icon -->
+          <!Hamburger Icon!>
           <svg id="icon-open" class="w-6 h-6 block transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2"
                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
 
-          <!-- Close Icon -->
+          <!Close Icon!>
           <svg id="icon-close" class="w-6 h-6 hidden transition-transform duration-300 transform" fill="none" stroke="currentColor" stroke-width="2"
                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 18L18 6M6 6l12 12" />
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
+    <!Mobile Menu!>
     <nav id="mobile-menu" class="mobile-menu-base hidden md:hidden px-4 pb-4 space-y-2 text-lg">
       <a href="#about" class="block hover:text-yellow-300 transition">About</a>
       <a href="#projects" class="block hover:text-yellow-300 transition">Projects</a>
@@ -59,7 +59,7 @@
     </nav>
   </header>
 
-  <!-- JavaScript -->
+  < !JavaScript!>
   <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -70,20 +70,16 @@
       const isHidden = mobileMenu.classList.contains('hidden');
 
       if (isHidden) {
-        // Show menu with animation
         mobileMenu.classList.remove('hidden');
         setTimeout(() => {
           mobileMenu.classList.add('open-menu');
         }, 10);
       } else {
-        // Hide animation, then fully hide it
         mobileMenu.classList.remove('open-menu');
         setTimeout(() => {
           mobileMenu.classList.add('hidden');
-        }, 300); // Wait for animation to finish
+        }, 300); 
       }
-
-      // Toggle icons
       iconOpen.classList.toggle('hidden');
       iconClose.classList.toggle('hidden');
     });
